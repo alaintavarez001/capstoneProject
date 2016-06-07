@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!-- Font Awesome Link -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://bootswatch.com/slate/bootstrap.min.css" crossorigin="anonymous">
+  <!-- j.querry CDN -->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+</head>
+
+<style>
+
+  #content{
+    margin: 5%;
+  }
+
+  label{
+    text-align: left;
+  }
+
+  h3{
+    text-align: center;
+  }
+
+</style>
+<body>
+
+  <div id="content">
+
+    <div class="btn-group btn-group-justified">
+      <a href="#" class="btn btn-default" id="home"><i class="fa fa-home" aria-hidden="true"></i>  Home</a>
+      <a href="#" class="btn btn-default" id="database"><i class="fa fa-database" aria-hidden="true"></i>  Database</a>
+      <a href="#" class="btn btn-default" id="profile"><i class="fa fa-user" aria-hidden="true"></i>  Profile</a>
+      <a href="#" class="btn btn-default" id="settings"><i class="fa fa-cogs" aria-hidden="true"></i>  Settings</a>
+    </div>
+
+  <div class="form-group">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+      <input type="text" class="form-control">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Search</button>
+        </span>
+      </div>
+    </div>
+
+  <a href="#" class="btn btn-default" id="back"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>  Back</a>
+
+    <h3>Edit Input Information</h3><br>
+
+    <form class="form-horizontal">
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h5 class="panel-title">Profile Picture</h5>
+      </div>
+      <div class="panel-body">
+        <img id="editProfilePicture">
+      </div>
+    </div>
+
+    <div>
+      <label class="control-label" for="inputDefault">Gender</label>
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+            Male
+          </label>
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            Female
+          </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="inputDefault">Last Name</label>
+      <input type="text" class="form-control" id="editLastname">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="inputDefault">First Name</label>
+      <input type="text" class="form-control" id="editFirstname">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="inputDefault">Alias</label>
+      <input type="text" class="form-control" id="editAlias">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="inputDefault">Age/Date/Place of Birth</label>
+      <input type="text" class="form-control" id="editAge">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="inputDefault">Ethnicity</label>
+      <input type="text" class="form-control" id="editEthnicity">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="inputDefault">Race</label>
+      <input type="text" class="form-control" id="editRace">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="inputDefault">Address</label>
+      <input type="text" class="form-control" id="editRace">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="inputDefault">Social Security or DL Number </label>
+      <input type="text" class="form-control" id="editSSN">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="inputDefault">Height/Weight</label>
+      <input type="text" class="form-control" id="editHtWt">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="inputDefault">Eye/Hair Color</label>
+      <input type="text" class="form-control" id="editEyeHair">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="inputDefault">Last Seen Wearing</label>
+      <input type="text" class="form-control" id="editOutfit">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="inputDefault">Affiliations</label>
+      <input type="text" class="form-control" id="editAffiliations">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="inputDefault">Location Stopped</label>
+      <input type="text" class="form-control" id="editLocation">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="inputDefault">Vehicle Year/Make/Model/Color/Lic PLate Num</label>
+      <input type="text" class="form-control" id="editVehicle">
+    </div>
+
+    <div class="form-group">
+      <label for="textArea" class="control-label">History(past records)</label>
+      <textarea class="form-control" rows="3" id="editHistory"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="textArea" class="control-label">Comments</label>
+      <textarea class="form-control" rows="3" id="editComments"></textarea>
+    </div>
+
+</form>
+
+  <a href="#" class="btn btn-default btn-lg btn-block" id="update"><i class="fa fa-check" aria-hidden="true"></i>  Update</a>
+
+</div>
+
+<div class="modal" id="success">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Success!</h4>
+      </div>
+      <div class="modal-body">
+        <p>Your database entry has been succesfully updated</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="ok">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+<script type="text/javascript">
+
+$('#back').click(function(){
+  window.location.href='profile.html';
+});
+
+$('#update').click(function(){
+  $('#success').modal('show');
+});
+
+$('#ok').click(function(){
+  window.location.href='profile.html';
+});
+
+
+$('#database').click(function(){
+   window.location.href='database.html';
+})
+
+$('#profile').click(function(){
+   window.location.href='profile.html';
+})
+
+$('#settings').click(function(){
+   window.location.href='settings.html';
+})
+
+$('#newEntry').click(function(){
+   window.location.href='newEntry.html';
+})
+
+$('#home').click(function(){
+   window.location.href='home.html';
+})
+
+
+
+</script>
+
+</html>

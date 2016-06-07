@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!-- Font Awesome Link -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://bootswatch.com/slate/bootstrap.min.css" crossorigin="anonymous">
+  <!-- j.querry CDN -->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+</head>
+
+<style>
+
+
+  #content{
+    margin: 5%;
+  }
+
+  label{
+  }
+
+  h3{
+    text-align: center;
+  }
+
+
+  .form-group {
+    width: 100%;
+  }
+
+
+</style>
+
+<body>
+
+<div id="content">
+
+
+<a href="#" class="btn btn-default" id="back"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>  Back</a>
+
+  <h3>Update Account Information</h3>
+
+<form class="form-horizontal">
+
+<div class="form-group">
+  <div>
+    <input type="text" class="form-control" id="firstName" placeholder="First Name">
+  </div>
+</div>
+<div class="form-group">
+  <div>
+    <input type="text" class="form-control" id="laststName" placeholder="Last Name">
+  </div>
+</div>
+<div class="form-group">
+  <div>
+    <input type="text" class="form-control" id="badgeNumber" placeholder="Badge Number">
+  </div>
+</div>
+<div class="form-group">
+  <div>
+    <input type="text" class="form-control" id="department" placeholder="Department/City/State">
+  </div>
+</div>
+<div class="form-group">
+  <div>
+    <input type="text" class="form-control" id="inputEmail" placeholder="E-mail">
+  </div>
+</div>
+<div class="form-group">
+  <div>
+    <input type="text" class="form-control" id="emailConfirm" placeholder="Confirm E-mail">
+  </div>
+</div>
+<div class="form-group">
+  <div>
+    <input type="text" class="form-control" id="inputPhoneNumber" placeholder="Phone Number">
+  </div>
+</div>
+    <div class="form-group">
+        <a href="#" class="btn btn-default btn-lg btn-block" id="updateAcctInfo"><i class="fa fa-check" aria-hidden="true"></i>  Update</a>
+    </div>
+
+</form>
+
+</div>
+
+<div class="modal" id="success">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Success!</h4>
+      </div>
+      <div class="modal-body">
+        <p>Your acccount information has been succesfully updated.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="ok">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+<script type="text/javascript">
+
+$('#updateAcctInfo').click(function(){
+  $('#success').modal('show');
+});
+
+$('#ok').click(function(){
+  window.location.href='settings.html';
+});
+
+$('#back').click(function(){
+  window.location.href='settings.html';
+});
+
+</script>
+
+</html>

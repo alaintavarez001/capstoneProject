@@ -1,0 +1,12 @@
+{
+  "name": "policeDatabaseApp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "reload -b -s home.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

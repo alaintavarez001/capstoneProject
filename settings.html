@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!-- Font Awesome Link -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://bootswatch.com/slate/bootstrap.min.css" crossorigin="anonymous">
+  <!-- j.querry CDN -->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+</head>
+
+<style>
+
+#content{
+  margin: 5%;
+}
+
+h3{
+  text-align: center;
+}
+
+.form-group {
+  width: 100%;
+}
+
+#settingsButtons{
+  margin-top: 20px;
+}
+
+
+</style>
+<body>
+
+<div id="content">
+
+<form class="form-horizontal">
+
+  <div class="btn-group btn-group-justified">
+    <a href="#" class="btn btn-default" id="home"><i class="fa fa-home" aria-hidden="true"></i>  Home</a>
+    <a href="#" class="btn btn-default" id="newEntry"><i class="fa fa-keyboard-o" aria-hidden="true"></i>  New Entry</a>
+    <a href="#" class="btn btn-default" id="database"><i class="fa fa-database" aria-hidden="true"></i>  Database</a>
+    <a href="#" class="btn btn-default" id="profile"><i class="fa fa-user" aria-hidden="true"></i>  Profile</a>
+  </div>
+
+  <h3>Settings</h3>
+
+  <div class="form-group">
+    <label for="textArea" class="col-lg-2 control-label">Contact Us</label>
+      <div class="col-lg-10">
+        <textarea class="form-control" rows="3" id="message"></textarea>
+        <a href="#" class="btn btn-default" id="sendMessage"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>  Send</a>
+      </div>
+  </div>
+
+  <div class="form-group">
+  <label class="col-lg-2 control-label">Skin</label>
+  <div class="col-lg-10">
+    <div class="radio">
+      <label>
+        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+        Light(day)
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+        Dark(night)
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option3">
+        Responsive(light from 7am-7pm, dark from 7pm-7am )
+      </label>
+    </div>
+  </div>
+</div>
+
+  <label for="select" class="col-lg-2 control-label">Language</label>
+  <div class="col-lg-10">
+    <select class="form-control" id="select">
+      <option>English</option>
+      <option>Español</option>
+      <option>Français</option>
+      <option>中文</option>
+      <option>Deutsche</option>
+      <option>Italiano</option>
+      <option>हिंदी</option>
+      <option>العربية</option>
+      <option>Português</option>
+      <option>বাঙালি</option>
+      <option>Pусский</option>
+      <option>日本語</option>
+      <option>ਪੰਜਾਬੀ ਦੇ</option>
+    </select>
+  </div>
+  <div class="btn-group btn-group-justified" id="settingsButtons">
+    <a href="#" class="btn btn-default" id="logout"><i class="fa fa-sign-out" aria-hidden="true"></i>  Log Out</a>
+    <a href="#" class="btn btn-default" id="acctInfo"><i class="fa fa-info" aria-hidden="true"></i>  My Info</a>
+    <a href="#" class="btn btn-default" id="editAcct"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>  Edit Acct Info</a>
+    <a href="#" class="btn btn-default" id="changePassword"><i class="fa fa-key" aria-hidden="true"></i>  Change Password</a>
+    <a href="#" class="btn btn-default" id="clearDatabase"><i class="fa fa-trash-o" aria-hidden="true"></i>  Clear Database</a>
+  </div>
+</form>
+
+</div>
+
+<div class="modal" id="success">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">WARNING!</h4>
+      </div>
+      <div class="modal-body">
+        <p>You are about to clear your entire database.<br>Are you sure you want to do this?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="yes">YES</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="no">NO</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="confirmAction">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Confirm Action</h4>
+      </div>
+      <div class="modal-body">
+        <p>You have chosen to delete every entry in your database.<br>Is this correct?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="yes2">YES</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="no">NO</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="done">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Success!</h4>
+      </div>
+      <div class="modal-body">
+        <p>Your database has ben successfuly cleared.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="ok">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="sent">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Message Sent!</h4>
+      </div>
+      <div class="modal-body">
+        <p>Your message has been sent, we will get back to you as soon as possible.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="ok">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="logoutMessage">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Confirm Action</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to log out?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="yes1">YES</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="no1">NO</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+<script type="text/javascript">
+
+$('#sendMessage').click(function(){
+  $('#sent').modal('show');
+});
+
+$('#logout').click(function(){
+  $('#logoutMessage').modal('show');
+});
+
+$('#clearDatabase').click(function(){
+  $('#success').modal('show');
+});
+
+$('#yes').click(function(){
+  $('#confirmAction').modal('show');
+})
+
+$('#yes1').click(function(){
+  window.location.href='login.html';
+});
+
+$('#yes2').click(function(){
+  $('#done').modal('show');
+})
+
+$('#no').click(function(){
+  window.location.href='settings.html';
+})
+
+$('#ok').click(function(){
+  window.location.href='settings.html';
+})
+
+$('#editAcct').click(function(){
+   window.location.href='updateAcctInfo.html';
+})
+
+$('#changePassword').click(function(){
+   window.location.href='changePassword.html';
+})
+
+$('#database').click(function(){
+   window.location.href='database.html';
+})
+
+$('#profile').click(function(){
+   window.location.href='profile.html';
+})
+
+
+$('#newEntry').click(function(){
+   window.location.href='newEntry.html';
+})
+
+$('#home').click(function(){
+   window.location.href='home.html';
+})
+
+$('#acctInfo').click(function(){
+   window.location.href='myInfo.html';
+})
+
+
+
+</script>
+
+</html>

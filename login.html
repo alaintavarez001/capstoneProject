@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!-- Font Awesome Link -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://bootswatch.com/slate/bootstrap.min.css" crossorigin="anonymous">
+  <!-- j.querry CDN -->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+</head>
+
+<style>
+
+
+  #content{
+    margin: 5%;
+  }
+
+  label{
+  }
+
+  h3{
+    text-align: center;
+  }
+
+  #logInButtons{
+    width: 100%;
+  }
+
+  #inputEmail, #inputPassword{
+    width: 100%;
+  }
+
+
+</style>
+
+<body>
+
+<div id="content">
+
+<form class="form-horizontal">
+  <h3> Database App Log In</h3>
+    <div class="form-group">
+  <div>
+    <input type="text" class="form-control" id="loginEmail" placeholder="E-mail">
+  </div>
+</div>
+<div class="form-group">
+  <div>
+    <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> Keep me logged in
+      </label>
+    </div>
+  </div>
+</div>
+<div class="btn-group btn-group-justified" id="logInButtons">
+  <a href="#" class="btn btn-default" id="login"><i class="fa fa-sign-in" aria-hidden="true"></i>  Log In</a>
+  <a href="#" class="btn btn-default" id="register"><i class="fa fa-registered" aria-hidden="true"></i>  Register</a>
+  <a href="#" class="btn btn-default" id="forgotPassword"><i class="fa fa-unlock-alt" aria-hidden="true"></i>  Forgot Password</a>
+</div>
+</form>
+
+</div>
+
+</body>
+
+<script type="text/javascript">
+
+$('#register').click(function(){
+   window.location.href='register.html';
+})
+
+$('#forgotPassword').click(function(){
+   window.location.href='forgotPassword.html';
+})
+
+$('#login').click(function(){
+   window.location.href='home.html';
+})
+
+
+</script>
+
+</html>

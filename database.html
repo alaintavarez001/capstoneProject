@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!-- Font Awesome Link -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://bootswatch.com/slate/bootstrap.min.css" crossorigin="anonymous">
+  <!-- j.querry CDN -->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+</head>
+
+<style>
+
+
+  #content{
+    margin: 5%;
+  }
+
+
+  h3{
+    text-align: center;
+  }
+
+
+
+
+</style>
+<body>
+  <div id="content">
+
+    <div class="btn-group btn-group-justified">
+      <a href="#" class="btn btn-default" id="home"><i class="fa fa-home" aria-hidden="true"></i>  Home</a>
+      <a href="#" class="btn btn-default" id="newEntry"><i class="fa fa-keyboard-o" aria-hidden="true"></i>  New Entry</a>
+      <a href="#" class="btn btn-default" id="profile"><i class="fa fa-user" aria-hidden="true"></i>  Profile</a>
+      <a href="#" class="btn btn-default" id="settings"><i class="fa fa-cogs" aria-hidden="true"></i>  Settings</a>
+    </div>
+
+  <div class="form-group">
+    <div class="input-group">
+      <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
+      <input type="text" class="form-control" id="searchBar">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button" id="searchButton">Search</button>
+        </span>
+      </div>
+    </div>
+
+    <h3>Database</h3>
+
+    <div class="list-group">
+      <a href="#" class="list-group-item"></a>
+    </div>
+</div>
+
+</body>
+
+<script type="text/javascript">
+
+$('#database').click(function(){
+   window.location.href='database.html';
+})
+
+$('#profile').click(function(){
+   window.location.href='profile.html';
+})
+
+$('#settings').click(function(){
+   window.location.href='settings.html';
+})
+
+$('#newEntry').click(function(){
+   window.location.href='newEntry.html';
+})
+
+$('#home').click(function(){
+   window.location.href='home.html';
+})
+
+
+
+</script>
+
+</html>
