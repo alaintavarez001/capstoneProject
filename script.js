@@ -7,7 +7,6 @@ var config = {
 };
 var app= firebase.initializeApp(config);
 
-
 function changeTheme(theme){
   document.getElementById("themeColors").setAttribute("href", theme);
   localStorage.setItem('theme', theme);
