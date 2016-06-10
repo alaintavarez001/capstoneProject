@@ -18,6 +18,8 @@ function loadTheme(){
   }
 }
 
+
+
 function loadProfile(){
   if(localStorage.getItem('theme')){
     changeTheme(localStorage.getItem('theme'));

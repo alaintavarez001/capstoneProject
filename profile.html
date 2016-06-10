@@ -180,6 +180,9 @@
 
 $(window).load(function() {
   var suspectid = window.location.search.substring(4);
+  var lastProfile = localStorage.getItem('lastProfile');
+  suspectid = suspectid || lastProfile;
+  if (suspectid)localStorage.setItem('lastProfile',suspectid);
   $("#edit").attr("href", 'editEntryInfo.html?id='+suspectid);
   var suspect= app.database().ref('entries/' + suspectid);
   suspect.on('value', function(snapshot){
@@ -295,6 +298,7 @@ $('#yes1').click(function(){
   $('#fail').modal('show');
   })
 })
+
 
 
 $('#sendPDF').click(function(){
