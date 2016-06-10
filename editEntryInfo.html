@@ -8,30 +8,21 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous">
   <!-- Optional theme -->
-  <link rel="stylesheet" href="https://bootswatch.com/slate/bootstrap.min.css" crossorigin="anonymous">
-  <!-- j.querry CDN -->
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <link  id="themeColors" rel="stylesheet" href="https://bootswatch.com/superhero/bootstrap.min.css" crossorigin="anonymous">
+  <!-- app specific css style sheet -->
+  <link rel="stylesheet" href="style.css">
 
 </head>
 
 <style>
 
-  #content{
-    margin: 5%;
-  }
-
   label{
     text-align: left;
   }
 
-  h3{
-    text-align: center;
-  }
-
 </style>
-<body>
+
+<body onload="loadTheme();">
 
   <div id="content">
 
@@ -56,7 +47,7 @@
 
     <h3>Edit Input Information</h3><br>
 
-    <form class="form-horizontal">
+    <form class="form-horizontal" id="form">
 
     <div class="panel panel-primary">
       <div class="panel-heading">
@@ -71,11 +62,11 @@
       <label class="control-label" for="inputDefault">Gender</label>
         <div class="radio">
           <label>
-            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+            <input type="radio" name="gender" id="editGender" value="male">
             Male
           </label>
           <label>
-            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            <input type="radio" name="gender" id="editGender" value="female">
             Female
           </label>
         </div>
@@ -83,87 +74,92 @@
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Last Name</label>
-      <input type="text" class="form-control" id="editLastname">
+      <input type="text" class="form-control" id="editLastname" name="last_name">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">First Name</label>
-      <input type="text" class="form-control" id="editFirstname">
+      <input type="text" class="form-control" id="editFirstname" name="first_name">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Alias</label>
-      <input type="text" class="form-control" id="editAlias">
+      <input type="text" class="form-control" id="editAlias" name="alias">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Age/Date/Place of Birth</label>
-      <input type="text" class="form-control" id="editAge">
+      <input type="text" class="form-control" id="editAge" name="age">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Ethnicity</label>
-      <input type="text" class="form-control" id="editEthnicity">
+      <input type="text" class="form-control" id="editEthnicity" name="ethnicity">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Race</label>
-      <input type="text" class="form-control" id="editRace">
+      <input type="text" class="form-control" id="editRace" name="race">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Address</label>
-      <input type="text" class="form-control" id="editRace">
+      <input type="text" class="form-control" id="editAddress" name="address">
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="inputDefault">Phone Number</label>
+      <input type="text" class="form-control" id="editPhone" name="phone">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Social Security or DL Number </label>
-      <input type="text" class="form-control" id="editSSN">
+      <input type="text" class="form-control" id="editSSN" name="SSN">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Height/Weight</label>
-      <input type="text" class="form-control" id="editHtWt">
+      <input type="text" class="form-control" id="editHtWt" name="ht_wt">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Eye/Hair Color</label>
-      <input type="text" class="form-control" id="editEyeHair">
+      <input type="text" class="form-control" id="editEyeHair" name="eye_hair_color">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Last Seen Wearing</label>
-      <input type="text" class="form-control" id="editOutfit">
+      <input type="text" class="form-control" id="editOutfit" name="last_seen_wearing">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Affiliations</label>
-      <input type="text" class="form-control" id="editAffiliations">
+      <input type="text" class="form-control" id="editAffiliations" name="affiliations">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Location Stopped</label>
-      <input type="text" class="form-control" id="editLocation">
+      <input type="text" class="form-control" id="editLocation" name="location">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Vehicle Year/Make/Model/Color/Lic PLate Num</label>
-      <input type="text" class="form-control" id="editVehicle">
+      <input type="text" class="form-control" id="editVehicle" name="vehicle">
     </div>
 
     <div class="form-group">
       <label for="textArea" class="control-label">History(past records)</label>
-      <textarea class="form-control" rows="3" id="editHistory"></textarea>
+      <textarea class="form-control" rows="3" id="editHistory" name="history"></textarea>
     </div>
 
     <div class="form-group">
       <label for="textArea" class="control-label">Comments</label>
-      <textarea class="form-control" rows="3" id="editComments"></textarea>
+      <textarea class="form-control" rows="3" id="editComments" name="comments"></textarea>
     </div>
 
 </form>
 
-  <a href="#" class="btn btn-default btn-lg btn-block" id="update"><i class="fa fa-check" aria-hidden="true"></i>  Update</a>
+  <a href="#" class="btn btn-default btn-lg btn-block" id="updateEntry"><i class="fa fa-check" aria-hidden="true"></i>  Update</a>
 
 </div>
 
@@ -184,16 +180,75 @@
   </div>
 </div>
 
-</body>
+<div class="modal" id="fail">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Error!</h4>
+      </div>
+      <div class="modal-body">
+        <p>Unfortunately there was an error updating your entry.<br> Please try again.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="ok">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- j.querry CDN -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+<!-- Firebase script -->
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- app specific js file -->
+<script src="script.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 
-$('#back').click(function(){
-  window.location.href='profile.html';
+$(window).load(function() {
+  var suspectid = window.location.search.substring(4);
+  console.log(suspectid)
+  var suspect= app.database().ref('entries/' + suspectid);
+  suspect.on('value', function(snapshot){
+    var data = snapshot.val();
+    $('#editGender').val(data.gender);
+    $('#editLastname').val(data.last_name);
+    $('#editFirstname').val(data.first_name);
+    $('#editAlias').val(data.alias);
+    $('#editAge').val(data.age);
+    $('#editEthnicity').val(data.ethnicity);
+    $('#editRace').val(data.race);
+    $('#editAddress').val(data.address);
+    $('#editPhone').val(data.phone);
+    $('#editSSN').val(data.SSN);
+    $('#editHtWt').val(data.ht_wt);
+    $('#editEyeHair').val(data.eye_hair_color);
+    $('#editOutfit').val(data.last_seen_wearing);
+    $('#editAffiliations').val(data.affiliations);
+    $('#editLocation').val(data.location);
+    $('#editVehicle').val(data.vehicle);
+    $('#editHistory').val(data.history);
+    $('#editComments').val(data.comments);
+  })
 });
 
-$('#update').click(function(){
-  $('#success').modal('show');
+$('#updateEntry').click(function(){
+ var suspectid = window.location.search.substring(4);
+ var inputForm = $("#form").serializeArray().reduce( function(p,c) { p[c.name] = c.value; return p;}, {});
+ app.database().ref('entries/' +suspectid).set(inputForm, function(err,resp){
+   if(err){
+     $('#fail').modal('show');
+   } else {
+     $('#success').modal('show');}
+  window.location.href='profile.html?id='+ suspectid;
+ });
+});
+
+$('#back').click(function(){
+  window.location.href='profile.html';
 });
 
 $('#ok').click(function(){
@@ -206,7 +261,8 @@ $('#database').click(function(){
 })
 
 $('#profile').click(function(){
-   window.location.href='profile.html';
+  var suspectid = window.location.search.substring(4);
+   window.location.href='profile.html?id='+ suspectid;
 })
 
 $('#settings').click(function(){
@@ -221,8 +277,17 @@ $('#home').click(function(){
    window.location.href='home.html';
 })
 
-
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyAFz6meHC_mPZXfNxs_3w3zRYsn444Za-g",
+  authDomain: "capstoneproject-d0813.firebaseapp.com",
+  databaseURL: "https://capstoneproject-d0813.firebaseio.com",
+  storageBucket: "",
+};
+firebase.initializeApp(config);
 
 </script>
+
+</body>
 
 </html>

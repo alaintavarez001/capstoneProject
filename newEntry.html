@@ -8,35 +8,13 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous">
   <!-- Optional theme -->
-  <link rel="stylesheet" href="https://bootswatch.com/slate/bootstrap.min.css" crossorigin="anonymous">
-  <!-- j.querry CDN -->
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <link id="themeColors" rel="stylesheet" href="https://bootswatch.com/superhero/bootstrap.min.css" crossorigin="anonymous">
+  <!-- app specific css style sheet -->
+  <link rel="stylesheet" href="style.css">
 
 </head>
 
-<style>
-
-
-  #content{
-    margin: 5%;
-  }
-
-  form{
-    width: 100%
-  }
-
-  label{
-    text-align: left;
-  }
-
-  h3{
-    text-align: center;
-  }
-
-</style>
-<body>
+<body onload="loadTheme();">
 
   <div id="content">
 
@@ -59,8 +37,8 @@
 
     <h3>Database Input Form</h3><br>
 
-  <div>
-    <form class="form-horizontal">
+
+    <form class="form-horizontal" id="form">
 
     <div class="panel panel-primary">
       <div class="panel-heading">
@@ -74,11 +52,11 @@
       <label class="control-label" for="inputDefault">Gender</label>
         <div class="radio">
           <label>
-            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+            <input type="radio" name="gender" id="maleGender" value="male">
             Male
           </label>
           <label>
-            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            <input type="radio" name="gender" id="femaleGender" value="female">
             Female
           </label>
 
@@ -86,87 +64,87 @@
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Last Name</label>
-      <input type="text" class="form-control" id="inputLastName">
+      <input type="text" class="form-control" id="inputLastName" name="last_name">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">First Name</label>
-      <input type="text" class="form-control" id="inputFirstName">
+      <input type="text" class="form-control" id="inputFirstName" name="first_name">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Alias</label>
-      <input type="text" class="form-control" id="inputAlias">
+      <input type="text" class="form-control" id="inputAlias" name="alias">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Age/Date/Place of Birth</label>
-      <input type="text" class="form-control" id="inputAge">
+      <input type="text" class="form-control" id="inputAge" name="age">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Ethnicity</label>
-      <input type="text" class="form-control" id="inputEthnicity">
+      <input type="text" class="form-control" id="inputEthnicity" name="ethnicity">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Race</label>
-      <input type="text" class="form-control" id="inputRace">
+      <input type="text" class="form-control" id="inputRace" name="race">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Address</label>
-      <input type="text" class="form-control" id="inputAdress">
+      <input type="text" class="form-control" id="inputAddress" name="address">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Phone Number</label>
-      <input type="text" class="form-control" id="inputPhone">
+      <input type="text" class="form-control" id="inputPhone" name="phone">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Social Security or DL Number </label>
-      <input type="text" class="form-control" id="inputSSN">
+      <input type="text" class="form-control" id="inputSSN" name="SSN">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Height/Weight</label>
-      <input type="text" class="form-control" id="inputHtWt">
+      <input type="text" class="form-control" id="inputHtWt" name="ht_wt">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Eye/Hair Color</label>
-      <input type="text" class="form-control" id="inputEyeHairColor">
+      <input type="text" class="form-control" id="inputEyeHairColor" name="eye_hair_color">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Last Seen Wearing</label>
-      <input type="text" class="form-control" id="inputOutfit">
+      <input type="text" class="form-control" id="inputOutfit" name="last_seen_wearing">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Affiliations</label>
-      <input type="text" class="form-control" id="inputAffiliations">
+      <input type="text" class="form-control" id="inputAffiliations" name="affiliations">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Location Stopped</label>
-      <input type="text" class="form-control" id="inputLocation">
+      <input type="text" class="form-control" id="inputLocation" name="location">
     </div>
 
     <div class="form-group">
       <label class="control-label" for="inputDefault">Vehicle Year/Make/Model/Color/Lic PLate Num</label>
-      <input type="text" class="form-control" id="inputVehicle">
+      <input type="text" class="form-control" id="inputVehicle" name="vehicle">
     </div>
 
     <div class="form-group">
       <label for="textArea" class="control-label">History(past records)</label>
-      <textarea class="form-control" rows="3" id="inputHistory"></textarea>
+      <textarea class="form-control" rows="3" id="inputHistory" name="history"></textarea>
     </div>
 
     <div class="form-group">
       <label for="textArea" class="control-label">Comments</label>
-      <textarea class="form-control" rows="3" id="inputComments"></textarea>
+      <textarea class="form-control" rows="3" id="inputComments" name="comments"></textarea>
     </div>
 
     </form>
@@ -174,7 +152,7 @@
   <a href="#" class="btn btn-default btn-lg btn-block" id="submitEntry"><i class="fa fa-check" aria-hidden="true"></i>  Submit</a>
 
 
-  </div>
+
 
 </div>
 
@@ -195,12 +173,41 @@
   </div>
 </div>
 
-</body>
+<div class="modal" id="fail">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Error!</h4>
+      </div>
+      <div class="modal-body">
+        <p>Unfortunately there was an error creating your entry.<br> Please try again.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" id="ok">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- j.querry CDN -->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" crossorigin="anonymous"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<!-- Firebase script -->
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<!-- app specific js file -->
+<script src="script.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-
 $('#submitEntry').click(function(){
-  $('#success').modal('show');
+ var inputForm = $("#form").serializeArray().reduce( function(p,c) { p[c.name] = c.value; return p;}, {});
+ app.database().ref('entries/' +new Date().getTime()).set(inputForm, function(err,resp){
+   if(err){
+     $('#fail').modal('show');
+   } else {
+     $('#success').modal('show');}
+ });
 });
 
 $('#ok').click(function(){
@@ -228,5 +235,7 @@ $('#home').click(function(){
 })
 
 </script>
+
+</body>
 
 </html>
