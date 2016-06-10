@@ -17,3 +17,9 @@ function loadTheme(){
     changeTheme(localStorage.getItem('theme'));
   }
 }
+
+function loadProfile(){
+  if(localStorage.getItem('theme')){
+    changeTheme(localStorage.getItem('theme'));
+  }
+}

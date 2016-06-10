@@ -289,7 +289,7 @@ $('#yes').click(function(){
 $('#yes1').click(function(){
   var suspectid = window.location.search.substring(4);
   var suspect= app.database().ref('entries/' + suspectid);
-  suspect.delete().then(function(){
+  suspect.remove(function(){
     $('#done').modal('show');
 }).catch(function(error) {
   $('#fail').modal('show');
