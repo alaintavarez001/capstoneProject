@@ -248,7 +248,8 @@ $('#updateEntry').click(function(){
 });
 
 $('#back').click(function(){
-  window.location.href='profile.html';
+    var suspectid = window.location.search.substring(4);
+     window.location.href='profile.html?id='+ suspectid;
 });
 
 $('#ok').click(function(){
@@ -260,10 +261,6 @@ $('#database').click(function(){
    window.location.href='database.html';
 })
 
-$('#profile').click(function(){
-  var suspectid = window.location.search.substring(4);
-   window.location.href='profile.html?id='+ suspectid;
-})
 
 $('#settings').click(function(){
    window.location.href='settings.html';
