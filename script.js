@@ -18,10 +18,6 @@ function loadTheme(){
   }
 }
 
-
-
-function loadProfile(){
-  if(localStorage.getItem('theme')){
-    changeTheme(localStorage.getItem('theme'));
-  }
-}
+$('#searchButton').click(function(){
+   window.location.href='searchResults.html';
+});
