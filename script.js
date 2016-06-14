@@ -18,6 +18,8 @@ function loadTheme(){
   }
 }
 
-$('#searchButton').click(function(){
-   window.location.href='searchResults.html';
+$('#searchButton').click(function(text){
+  var searchText = $('#searchBar').val();
+  localStorage.setItem('search',searchText);
+  window.location.href='searchResults.html';
 });

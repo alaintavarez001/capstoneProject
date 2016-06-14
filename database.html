@@ -52,14 +52,15 @@
 
 <script type="text/javascript">
 
-app.database().ref('entries').on('value', function(snapshot) {
-  var suspects = snapshot.val();
-  for (var id in suspects){
+app.database().ref('entries').orderByChild('last_name').on('value', function(snapshot) {
+  snapshot.forEach(function(child){
+    var suspect = child.val();
+    var id = child.key;
     var markup = `<a href="profile.html?id=${id}" class="list-group-item">
-    ${suspects[id].last_name}, ${suspects[id].first_name}, ${suspects[id].alias}
+    ${suspect.last_name}, ${suspect.first_name}, ${suspect.alias}
     </a>`;
     $('#databaseList').append(markup);
-  }
+  });
 });
 
 
