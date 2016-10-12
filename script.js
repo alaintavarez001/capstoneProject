@@ -23,3 +23,14 @@ $('#searchButton').click(function(text){
   localStorage.setItem('search',searchText);
   window.location.href='searchResults.html';
 });
+
+function matchExists(suspect, keyword){
+  return suspect.gender == keyword || suspect.last_name == keyword ||
+  suspect.first_name == keyword || suspect.alias == keyword ||
+  suspect.age == keyword || suspect.ethnicity == keyword ||
+  suspect.race == keyword || suspect.address == keyword ||
+  suspect.phone == keyword || suspect.SSN == keyword ||
+  suspect.ht_wt == keyword || suspect.eye_hair_color == keyword ||
+  suspect.last_seen_wearing == keyword || suspect.affiliations == keyword ||
+  suspect.location == keyword || suspect.vehicle == keyword;
+};

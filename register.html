@@ -21,33 +21,8 @@
 <a href="#" class="btn btn-default" id="back"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i>  Back</a>
 
 <form class="form-horizontal">
-  <h3> Database App Registration</h3>
+  <h3> FI Registration</h3>
 
-<div class="form-group">
-  <div>
-    <input type="text" class="form-control" id="firstName" placeholder="First Name">
-  </div>
-</div>
-<div class="form-group">
-  <div>
-    <input type="text" class="form-control" id="laststName" placeholder="Last Name">
-  </div>
-</div>
-<div class="form-group">
-  <div>
-    <input type="text" class="form-control" id="badgeNumber" placeholder="Badge Number">
-  </div>
-</div>
-<div class="form-group">
-  <div>
-    <input type="text" class="form-control" id="department" placeholder="Department/City/State">
-  </div>
-</div>
-<div class="form-group">
-  <div>
-    <input type="text" class="form-control" id="phoneNumber" placeholder="Phone Number">
-  </div>
-</div>
 <div class="form-group">
   <div>
     <input type="text" class="form-control" id="email" placeholder="E-mail">
@@ -103,14 +78,12 @@ $('#back').click(function(){
   window.location.href='login.html';
 });
 
-// Initialize Firebase
-var config = {
-  apiKey: "AIzaSyAFz6meHC_mPZXfNxs_3w3zRYsn444Za-g",
-  authDomain: "capstoneproject-d0813.firebaseapp.com",
-  databaseURL: "https://capstoneproject-d0813.firebaseio.com",
-  storageBucket: "",
-};
-firebase.initializeApp(config);
+firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...
+});
 
 </script>
 
